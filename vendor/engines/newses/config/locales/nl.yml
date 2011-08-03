@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    newses:
+      title: Newses
+  admin:
+    newses:
+      actions:
+        create_new: Maak een nieuwe Newse
+        reorder: Wijzig de volgorde van de Newses
+        reorder_done: Klaar met het wijzingen van de volgorde van de Newses
+      records:
+        title: Newses
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Newses. Druk op 'Maak een nieuwe Newse' om de eerste aan te maken.
+      newse:
+        view_live_html: Bekijk deze newse op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze newse
+        delete: Verwijder deze newse voor eeuwig
+  newses:
+    show:
+      other: Andere Newses

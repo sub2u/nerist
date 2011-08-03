@@ -1,0 +1,21 @@
+nl:
+  plugins:
+    happenings:
+      title: Happenings
+  admin:
+    happenings:
+      actions:
+        create_new: Maak een nieuwe Happening
+        reorder: Wijzig de volgorde van de Happenings
+        reorder_done: Klaar met het wijzingen van de volgorde van de Happenings
+      records:
+        title: Happenings
+        sorry_no_results: Helaas! Er zijn geen resultaten gevonden.
+        no_items_yet: Er zijn nog geen Happenings. Druk op 'Maak een nieuwe Happening' om de eerste aan te maken.
+      happening:
+        view_live_html: Bekijk deze happening op de website <br/><em>(opent een nieuw venster)</em>
+        edit: Bewerk deze happening
+        delete: Verwijder deze happening voor eeuwig
+  happenings:
+    show:
+      other: Andere Happenings

@@ -1,0 +1,45 @@
+<% content_for :body_content_title do %>
+  <%= @happening.title %>
+<% end %>
+
+<% content_for :body_content_left do %>
+  <section>
+    <h1>Title</h1>
+    <p>
+      <%=raw @happening.title %>
+    </p>
+  </section>
+  <section>
+    <h1>Url</h1>
+    <p>
+      <%=raw @happening.url %>
+    </p>
+  </section>
+  <section>
+    <h1>Branch</h1>
+    <p>
+      <%=raw @happening.branch %>
+    </p>
+  </section>
+  <section>
+    <h1>Description</h1>
+    <p>
+      <%=raw @happening.description %>
+    </p>
+  </section>
+<% end %>
+
+<% content_for :body_content_right do %>
+  <aside>
+    <h2><%= t('.other') %></h2>
+    <ul id="happenings">
+      <% @happenings.each do |happening| %>
+        <li>
+          <%= link_to happening.title, happening_path(happening) %>
+        </li>
+      <% end %>
+    </ul>
+  </aside>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

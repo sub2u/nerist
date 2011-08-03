@@ -1,0 +1,25 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    newses:
+      title: Newses
+  admin:
+    newses:
+      actions:
+        create_new: Add New Newse
+        reorder: Reorder Newses
+        reorder_done: Done Reordering Newses
+      records:
+        title: Newses
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Newses yet. Click "Add New Newse" to add your first newse.
+      newse:
+        view_live_html: View this newse live <br/><em>(opens in a new window)</em>
+        edit: Edit this newse
+        delete: Remove this newse forever
+  newses:
+    show:
+      other: Other Newses

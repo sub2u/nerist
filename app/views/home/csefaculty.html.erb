@@ -1,0 +1,53 @@
+<table width=98% style="margin-left: 1%;">
+  <tr>
+
+    <td width=75% valign="top">
+      <div id="home">
+       <%@pag ||=Page.find('csefaculty')%>
+       <%=raw @pag[:body] %>
+      </div>
+    </td>
+    <td width=25% valign="top">
+      <div id="subhome">
+        <a href="/cse"><div class="buttwo">Computer Science</div></a>
+        <a href="/csecourses"><div class="buttwo">Courses</div></a>
+        <a href="/csefaculty"><div class="buttwo">Faculty</div></a>
+        <a href="/cselaboratory"><div class="buttwo">Laboratory</div></a>
+        <a href="/cselibrary"><div class="buttwo">Library</div></a>
+        <a href="/cseresearch"><div class="buttwo">Research</div></a>
+        <a href="/csecan"><div class="buttwo">CAN</div></a>
+
+    </div>
+    <div id="dept">CSE Home (Show/Hide)</div>
+    <div id="righttop">
+        <div style="background-color: #444444;color: white;font-weight: bold;">Latest News</div>
+        <div style="height: 160px;">
+         <marquee DIRECTION=up scrollamount=3 height=100%>
+        <%@news ||=Newse.find(:all,:order => "id DESC", :limit => 5,:conditions => ["branch = ?","cse"])%>
+       <%@news.each do |news|%>
+        <a href="/newses/<%=news.id%>" target="_blank"><%=news.title%></a>
+        <hr/>
+        <%end%>
+         </marquee>
+      </div>
+        <a href="/newses"><div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: white;text-align: center;font-weight: bold;width: auto;">More</div>
+    </a>
+      </div>
+    <div id="rightmiddle">
+      <div style="background-color: #444444;color: white;font-weight: bold;">Recent Happenings</div>
+   <div style="height: 160px;">
+
+        <%@happen ||=Happening.find(:all,:conditions => ["branch = ?","cse"])%>
+       <%@happen.each do |happen|%>
+     <a href="<%=happen.url%>" target="_blank" style="text-decoration: none;"><%=happen.title%></a>
+        <hr/>
+        <%end%>
+
+      </div>
+    </div>
+    <div id="rightbottom">
+      <div style="background-color: #444444;color: white;font-weight: bold;">Feedback</div>
+      </div>
+    </td>
+  </tr>
+</table>

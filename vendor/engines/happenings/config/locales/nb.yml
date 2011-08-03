@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    happenings:
+      title: Happenings
+  admin:
+    happenings:
+      actions:
+        create_new: Lag en ny Happening
+        reorder: Endre rekkefølgen på Happenings
+        reorder_done: Ferdig å endre rekkefølgen Happenings
+      records:
+        title: Happenings
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Happenings enda. Klikk på "Lag en ny Happening" for å legge til din første happening.
+      happening:
+        view_live_html: Vis hvordan denne happening ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne happening
+        delete: Fjern denne happening permanent
+  happenings:
+    show:
+      other: Andre Happenings

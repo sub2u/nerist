@@ -1,0 +1,11 @@
+<% content_for :body_content_left do %>
+  <ul id="newses">
+    <% @newses.each do |newse| %>
+      <li>
+        <%= link_to newse.title, newse_path(newse) %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+<%= render :partial => "/shared/content_page" %>

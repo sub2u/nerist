@@ -1,0 +1,175 @@
+/*
+  Override default refinery 'theme' styles here.
+  These only apply when using custom WYMeditor CSS.
+*/
+.ancer
+{
+    text-decoration: none;
+    color: blue;
+}
+.ancer:hover
+{
+    background-color: transparent;
+    color: #000000;
+}
+.main
+{
+    width: 985px;
+/*    background-color: #f00;*/
+    margin: 25px auto;
+    margin-top: 0px;
+
+}
+#barone
+{
+    width: 50%;
+    height: 30px;
+    margin-left: 49%;
+    
+   
+}
+.but
+{
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+    padding-top: 4px;
+    text-align: center;
+    background-color: orange;
+}
+.but:hover
+{
+    color: white;
+    font-weight: bold;
+    background-color: #666666;
+
+}
+.butone
+{
+    width: 130px;
+    margin-top: -3px;
+    margin-left: -3px;
+    height: 26px;
+   cursor: pointer;
+/*    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;*/
+    padding-top: 4px;
+    text-align: center;
+   
+    color: white;
+    font-weight: bold;
+}
+#bartwo
+{
+width: 98%;
+margin-left: 1%;
+height: 30px;
+background-color: #444444;
+}
+#righttop
+{
+    height: 200px;
+    background-color: #EEEEEE;
+}
+#rightmiddle
+{
+    height: 200px;
+    margin-top: 5px;
+    background-color: #EEEEEE;
+    overflow: auto;
+}
+#rightbottom
+{
+    height: 280px;
+    background-color: #EEEEEE;
+}
+#home
+{
+    height:auto;
+    margin-left: -3px;
+   
+}
+#departments
+{
+    display: none;
+    background-color: #444444;
+    margin-left: 420px;
+    position: absolute;
+  
+    z-index:10;
+}
+#Institute
+{
+    display: none;
+    background-color: #444444;
+    margin-left: 140px;
+    position: absolute;
+
+    z-index:10;
+}
+#Academic
+{
+    display: none;
+    background-color: #444444;
+    margin-left: 265px;
+    position: absolute;
+
+    z-index:10;
+}
+#Facilities
+{
+    display: none;
+    background-color: #444444;
+    margin-left: 530px;
+    position: absolute;
+
+    z-index:10;
+}
+#Students
+{
+    display: none;
+    background-color: #444444;
+    margin-left: 660px;
+    position: absolute;
+
+    z-index:10;
+}
+.buttwo
+{
+   cursor: pointer;
+/*    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;*/
+    padding-top: 4px;
+    text-align: center;
+    color: white;
+   
+}
+.buttwo:hover
+{
+    background-color: #666666;
+}
+.butone:hover
+{
+    background-color: #666666;
+}
+#dept
+{
+    text-align: center;
+    background-color: orange;
+    color: white;
+    cursor:pointer;
+    font-weight: bold;
+ height: 30px;
+ vertical-align:middle;
+}
+#subhome
+{
+    display: none;
+   background-color: #444444;
+
+}

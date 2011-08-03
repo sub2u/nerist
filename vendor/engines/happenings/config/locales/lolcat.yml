@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    happenings:
+      title: Happenings
+  admin:
+    happenings:
+      actions:
+        create_new: CREATE NEW Happening
+        reorder: REORDR Happenings
+        reorder_done: DUN REORDERIN Happenings
+      records:
+        title: Happenings
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Happenings YET. CLICK "CREATE NEW Happening" 2 ADD UR FURST happening.
+      happening:
+        view_live_html: VIEW DIS happening LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS happening
+        delete: REMOOV DIS happening FOREVR
+  happenings:
+    show:
+      other: OTHR Happenings

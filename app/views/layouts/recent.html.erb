@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="shortcut icon" href="images/log.bmp" type="image/x-icon" />
+  <title>NERIST</title>
+  <%= stylesheet_link_tag :all %>
+  <%= javascript_include_tag :all %>
+  <%= csrf_meta_tag %>
+  <script type="text/javascript">
+$(document).ready(function(){
+  $("#department").mouseover(function(){
+  $(".submenu").slideUp();
+  $("#departments").slideDown(500);
+  });
+ $("#Institutes").mouseover(function(){
+  $(".submenu").slideUp();
+  $("#Institute").slideDown(500);
+  });
+  $("#Academics").mouseover(function(){
+  $(".submenu").slideUp();
+  $("#Academic").slideDown(500);
+  });
+  $("#Facilitie").mouseover(function(){
+  $(".submenu").slideUp();
+  $("#Facilities").slideDown(500);
+  });
+  $("#Student").mouseover(function(){
+  $(".submenu").slideUp();
+  $("#Students").slideDown(500);
+  });
+  $("#homebar").mouseover(function(){
+  $(".submenu").slideUp();
+  });
+  $("#dept").mouseover(function(){
+  $(".submenu").slideUp();
+  $("#subhome").slideToggle(500);
+  });
+  $("#head").mouseover(function(){
+  $(".submenu").slideUp();
+  });
+  $("#content").mouseover(function(){
+  $(".submenu").slideUp();
+  });
+  $(".but").mouseover(function(){
+  $(".submenu").slideUp();
+  });
+});
+
+</script>
+</head>
+<body>
+  <div>
+    <div class="main">
+      <div id="head"><img src="images/logo.bmp" width=100% /></div>
+      <div id="menu">
+        <div id="barone"><table>
+            <tr><td>
+                <a href="/other"><div class="but">Login</div></a></td><td>
+                <a href="/other"><div class="but">RTI</div></a></td><td>
+                <a href="/other"><div class="but">Discloser</div></a></td><td>
+                <a href="/other"><div class="but">webMail</div></a></td></tr>
+          </table>
+        </div>
+        <div id="bartwo">
+          <table>
+            <tr><td>
+                <a href="/"><div class="butone" id="homebar">Home</div></a></td><td>
+                <div class="butone" id="Institutes">Institute</div></td><td>
+                <div class="butone" id="Academics">Academic</div></td><td>
+                <div class="butone" id="department">Departments</div></td><td>
+                <div class="butone" id="Facilitie">Facilities</div></td><td>
+                <div class="butone" id="Student">Students</div></td></tr>
+          </table>
+        </div>
+        <div id="departments" class="submenu">
+          <a href="/other"><div class="buttwo">Agricultural</div></a>
+                <a href="/cse"><div class="buttwo">Computer Science </div></a>
+                <a href="/other"><div class="buttwo">Chemistry</div></a>
+                <a href="/other"><div class="buttwo">Civil</div></a>
+                <a href="/ece"><div class="buttwo">ECE</div></a>
+                <a href="/other"><div class="buttwo">Electrical</div></a>
+                <a href="/other"><div class="buttwo">Forestry</div></a>
+                <a href="/other"><div class="buttwo">HSS</div></a>
+                <a href="/other"><div class="buttwo">Mathematics</div></a>
+                <a href="/other"><div class="buttwo">Mechanical</div></a>
+                <a href="/other"><div class="buttwo">Physics</div></a>
+                </div>
+        <div id="Institute" class="submenu">
+          <a href="/other"><div class="buttwo">Administration</div></a>
+          <a href="/other"><div class="buttwo">Director</div></a>
+          <a href="/other"><div class="buttwo">History</div></a>
+          <a href="/other"><div class="buttwo">Organization Structure</div></a>
+          <a href="/other"><div class="buttwo">Location</div></a>
+          <a href="/other"><div class="buttwo">Campus</div></a>
+        </div>
+        <div id="Academic" class="submenu">
+          <a href="/other"><div class="buttwo">Research & Development</div></a>
+                  <a href="/other"><div class="buttwo">Fees & Scholarships</div></a>
+                  <a href="/other"><div class="buttwo">Curriculum</div></a>
+                  <a href="/other"><div class="buttwo">Training & Placement</div></a>
+                  <a href="/other"><div class="buttwo">Examination Cell</div></a>
+
+        </div>
+        <div id="Facilities" class="submenu">
+          <a href="/other"><div class="buttwo">Library</div></a>
+                  <a href="/other"><div class="buttwo">ET Cell/ACCF</div></a>
+                  <a href="/other"><div class="buttwo">NERIST Health Unit</div></a>
+                  <a href="/other"><div class="buttwo">Kendriya Vidyalaya</div></a>
+                  <a href="/other"><div class="buttwo">Guest House</div></a>
+                  <a href="/other"><div class="buttwo">Clubs</div></a>
+                  <a href="/other"><div class="buttwo">Bank</div></a>
+                  <a href="/other"><div class="buttwo">Auditorium</div></a>
+                  <a href="/other"><div class="buttwo">Internet</div></a>
+                  <a href="/other"><div class="buttwo">Hostels</div></a>
+
+                </div>
+        <div id="Students" class="submenu">
+          <a href="/other"><div class="buttwo">Hostels</div></a>
+          <a href="/other"><div class="buttwo">Gymkhana</div></a>
+          <a href="/other"><div class="buttwo">Fee Structure</div></a>
+          <a href="/other"><div class="buttwo">Students Activities</div></a>
+          <a href="/other"><div class="buttwo">Student Facilties</div></a>
+          <a href="/other"><div class="buttwo">Alumni</div></a>
+        </div>
+      </div>
+      <div id="content">
+        <table width=98% style="margin-left: 1%;">
+  <tr>
+
+    <td width=75% valign="top">
+      <div id="home">
+               <%=yield%>
+      </div>
+    </td>
+    <td width=25% valign="top">
+      <div id="righttop"><div style="background-color: #444444;color: white;font-weight: bold;">Latest News</div>
+        <div style="height: 160px;">
+         <marquee DIRECTION=up scrollamount=3 height=100%>
+        <%@news ||=Newse.find(:all,:order => "id DESC", :limit => 10)%>
+       <%@news.each do |news|%>
+        <a href="/newses/<%=news.id%>" target="_blank"><%=news.title%></a>
+        <%end%>
+         </marquee>
+      </div>
+        <a href="/newses"><div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: white;text-align: center;font-weight: bold;width: auto;">More</div>
+    </a>
+      </div>
+    <div id="rightmiddle">
+      <div style="background-color: #444444;color: white;font-weight: bold;">Recent Happenings</div>
+      </div>
+    <div id="rightbottom">
+      <div style="background-color: #444444;color: white;font-weight: bold;">Feedback</div>
+      </div>
+    </td>
+  </tr>
+</table>
+
+      </div>
+      <div id="foot"></div>
+    </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+lolcat:
+  shared:
+    admin:
+      image_picker:
+        image: IMAGE
+  plugins:
+    newses:
+      title: Newses
+  admin:
+    newses:
+      actions:
+        create_new: CREATE NEW Newse
+        reorder: REORDR Newses
+        reorder_done: DUN REORDERIN Newses
+      records:
+        title: Newses
+        sorry_no_results: SRY! THAR R NO RESULTS FINDZ.
+        no_items_yet: THAR R NO Newses YET. CLICK "CREATE NEW Newse" 2 ADD UR FURST newse.
+      newse:
+        view_live_html: VIEW DIS newse LIV <BR/><EM>(OPENS IN NEW WINDOW)</EM>
+        edit: EDIT DIS newse
+        delete: REMOOV DIS newse FOREVR
+  newses:
+    show:
+      other: OTHR Newses

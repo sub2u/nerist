@@ -1,0 +1,25 @@
+en:
+  shared:
+    admin:
+      image_picker:
+        image: image
+  plugins:
+    happenings:
+      title: Happenings
+  admin:
+    happenings:
+      actions:
+        create_new: Add New Happening
+        reorder: Reorder Happenings
+        reorder_done: Done Reordering Happenings
+      records:
+        title: Happenings
+        sorry_no_results: Sorry! There are no results found.
+        no_items_yet: There are no Happenings yet. Click "Add New Happening" to add your first happening.
+      happening:
+        view_live_html: View this happening live <br/><em>(opens in a new window)</em>
+        edit: Edit this happening
+        delete: Remove this happening forever
+  happenings:
+    show:
+      other: Other Happenings

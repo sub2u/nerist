@@ -1,0 +1,21 @@
+nb:
+  plugins:
+    newses:
+      title: Newses
+  admin:
+    newses:
+      actions:
+        create_new: Lag en ny Newse
+        reorder: Endre rekkefølgen på Newses
+        reorder_done: Ferdig å endre rekkefølgen Newses
+      records:
+        title: Newses
+        sorry_no_results: Beklager! Vi fant ikke noen resultater.
+        no_items_yet: Det er ingen Newses enda. Klikk på "Lag en ny Newse" for å legge til din første newse.
+      newse:
+        view_live_html: Vis hvordan denne newse ser ut offentlig <br/><em>(åpner i et nytt vindu)</em>
+        edit: Rediger denne newse
+        delete: Fjern denne newse permanent
+  newses:
+    show:
+      other: Andre Newses
