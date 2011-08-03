@@ -19,16 +19,23 @@
         <%end%>
          </marquee>
       </div>
-        <a href="/newses"><div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: white;text-align: center;font-weight: bold;width: auto;">More</div>
-    </a>
+
+        <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: white;text-align: center;font-weight: bold;width: auto;">
+          <%= link_to "More",{:controller=>'home', :action=>'newslist'}, :remote=>true,:class => 'ancer'%>
+          </div>
+    
       </div>
     <div id="rightmiddle">
+
       <div style="background-color: #444444;color: white;font-weight: bold;">Recent Happenings</div>
    <div style="height: 160px;">
         
         <%@happen ||=Happening.find(:all)%>
        <%@happen.each do |happen|%>
-     <a href="<%=happen.url%>" target="_blank" style="text-decoration: none;"><%=happen.title%></a>
+     
+<%= link_to "#{happen.title}",{:controller=>'home', :action=>'happening',:id =>happen.id}, :remote=>true,:class => 'ancer'%>
+     <a href="<%=happen.url%>" target="_blank" class="ancer" style="text-decoration: blink;color: red;">
+       Download</a>
         <hr/>
         <%end%>
       

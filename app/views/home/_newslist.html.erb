@@ -1,0 +1,5 @@
+<%@news ||=Newse.find(:all,:order => "id DESC")%>
+       <%@news.each do |news|%>
+        <%= link_to "#{news.title}",{:controller=>'home', :action=>'news',:id =>news.id}, :remote=>true,:class => 'ancer'%>
+ <hr/>
+        <%end%>

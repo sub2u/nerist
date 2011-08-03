@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <b>User type:</b>
+  <%= @customer.user_type %>
+</p>
+
+<p>
+  <b>User:</b>
+  <%= @customer.user_id %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <b>Login:</b>
+  <%= @customer.login_id %>
+</p>
+
+<p>
+  <b>Password hash:</b>
+  <%= @customer.password_hash %>
+</p>
+
+<p>
+  <b>Password salt:</b>
+  <%= @customer.password_salt %>
+</p>
+
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

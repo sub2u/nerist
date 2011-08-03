@@ -1,8 +1,14 @@
 Nerist::Application.routes.draw do
+  resources :customers
+ get 'customers/signin'
+  match 'signin' => 'customers#signin'
+  post 'customers/login'
   root :to => "home#home"
   resources :feedbacks
   get "home/home"
   get "home/news"
+  get "home/newslist"
+   get "home/happening"
   get "home/csehome"
   get "home/csecourses"
   get "home/csefaculty"

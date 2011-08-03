@@ -1,0 +1,14 @@
+
+<%=flash%>
+<% form_tag :controller=>"customers", :action=>"login" do %>
+      <label for="user_login">Login:</label>
+      <%= text_field "user", "login", :size=>20 %>
+
+    <div class="signin_field">
+      <label for="user_password">Password:</label>
+      <%= password_field "user", "password", :size=>20 %>
+    </div>
+    <div id="signin_button">
+    <%= submit_tag "Login" %>&nbsp;&nbsp;
+    </div>
+   <%end%>
