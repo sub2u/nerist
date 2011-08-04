@@ -52,7 +52,7 @@ $j(document).ready(function(){
   $j("a").click(function(){
   $j("#home").html("<div class='loading'>Loading....</div>");
   });
-$j("#logbut").mouseover(function(){
+$j("#logbut").click(function(){
   $j("#departments").slideUp();
   $j("#login").slideDown(500);
   });
@@ -67,19 +67,27 @@ $j("#logbut").mouseover(function(){
       <div id="menu">
         <div id="barone"><table border="0" width=100%>
             <tr>
-              <td width=48% id="except"><%=flash[:notice]%><%=flash[:error]%></td>
-              <td>
-                <a href="/other"><div class="butexcept" id="logbut">Login</div></a></td><td>
-                <a href="/other"><div class="but">RTI</div></a></td><td>
-                <a href="/other"><div class="but">Discloser</div></a></td><td>
-                <a href="/other"><div class="but">webMail</div></a></td>
-              <td width=15% id="except" align="center" valign="middle">
+              <td width=48% id="except" valign="middle">
                 <%@ses ||=session[:user]
                 if @ses.nil?
               %>
               <%else%>
-                <%= link_to "Logout",{:controller=>'customers', :action=>'logout'},:class => 'ancer'%>
-
+                <% @fed ||=Customer.find(@ses)%>
+                <div style="font-weight: bold;font-size: 20px;color: navy;padding-left: 20px;margin-top: -6px;">Welcome <%=@fed.name%></div>
+                <%end%>
+              </td>
+              <td>
+                <div class="butexcept" id="logbut">Login</div></td><td>
+                <a href="/other"><div class="but">RTI</div></a></td><td>
+                <a href="/other"><div class="but">Discloser</div></a></td><td>
+                <a href="/other"><div class="but">webMail</div></a></td>
+              <td width=15% id="except" valign="middle">
+                <%@ses ||=session[:user]
+                if @ses.nil?
+              %>
+              <%else%>
+                <div class="but"><%= link_to "Logout",{:controller=>'customers', :action=>'logout'},:class => 'ancer'%>
+                </div>
                 <%end%>
               </td></tr>
           </table>
@@ -92,12 +100,18 @@ $j("#logbut").mouseover(function(){
                 <div class="butone" id="Academics">Academic</div></td><td>
                 <div class="butone" id="department">Departments</div></td><td>
                 <div class="butone" id="Facilitie">Facilities</div></td><td>
-                <div class="butone" id="Student">Students</div></td><td>
-           <% if @ses.nil?  %>
+                <div class="butone" id="Student">Students</div></td><td valign="top">
+<%@ses ||=session[:user]
+                if @ses.nil?
+              %>
               <%else%>
-          
-                <%= link_to "Feedbacks",{:controller=>'feedbacks', :action=>'index'}, :remote=>true,:class => 'butone'%>
+<% @fed ||=Customer.find(@ses)
+           if @fed.user_type==="Admin"  %>
+ <%= link_to "Feedbacks",{:controller=>'feedbacks', :action=>'index'}, :remote=>true,:class => 'butone'%>
              </td></tr>
+<%else%>
+      <%end%>
+               
                 <%end%>
           </table>
         </div>

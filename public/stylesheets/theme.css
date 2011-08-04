@@ -99,6 +99,7 @@
     color: white;
     font-weight: bold;
 }
+
 #bartwo
 {
     text-decoration: none;
@@ -175,6 +176,7 @@ background-color: #444444;
 
     z-index:10;
 }
+
 #login
 {
     display: none;
