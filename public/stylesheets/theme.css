@@ -51,9 +51,11 @@
     padding-top: 4px;
     text-align: center;
     background-color: orange;
+    text-decoration: none;
 }
 .but:hover
 {
+    text-decoration: none;
     color: white;
     font-weight: bold;
     background-color: #666666;
@@ -61,6 +63,7 @@
 }
 .butexcept
 {
+    text-decoration: none;
     width: 90px;
     height: 30px;
     cursor: pointer;
@@ -73,6 +76,7 @@
 }
 .butexcept:hover
 {
+    text-decoration: none;
     color: white;
     font-weight: bold;
     background-color: #666666;
@@ -80,6 +84,7 @@
 }
 .butone
 {
+    text-decoration: none;
     width: 130px;
     margin-top: -3px;
     margin-left: -3px;
@@ -96,6 +101,7 @@
 }
 #bartwo
 {
+    text-decoration: none;
 width: 98%;
 margin-left: 1%;
 height: 30px;
@@ -182,6 +188,7 @@ background-color: #444444;
 }
 .buttwo
 {
+    text-decoration: none;
    cursor: pointer;
 /*    -moz-border-radius: 5px;
     -webkit-border-radius: 5px;
@@ -193,10 +200,12 @@ background-color: #444444;
 }
 .buttwo:hover
 {
+    text-decoration: none;
     background-color: #666666;
 }
 .butone:hover
 {
+    text-decoration: none;
     background-color: #666666;
 }
 #dept
