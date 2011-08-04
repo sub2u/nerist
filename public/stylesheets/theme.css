@@ -24,7 +24,7 @@
 {
     width: 100%;
     height: 30px;
-    padding-left:  49%;
+/*    padding-left:  49%;*/
     
    
 }
@@ -47,6 +47,25 @@
     background-color: #666666;
 
 }
+.butexcept
+{
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px 5px 5px 5px;
+    padding-top: 4px;
+    text-align: center;
+    background-color: orange;
+}
+.butexcept:hover
+{
+    color: white;
+    font-weight: bold;
+    background-color: #666666;
+
+}
 .butone
 {
     width: 130px;
@@ -59,7 +78,7 @@
     border-radius: 5px 5px 5px 5px;*/
     padding-top: 4px;
     text-align: center;
-   
+   text-decoration: none;
     color: white;
     font-weight: bold;
 }
@@ -138,6 +157,16 @@ background-color: #444444;
 
     z-index:10;
 }
+#login
+{
+    display: none;
+    background-color: #EEEEEE;
+    margin-left: 470px;
+    margin-top: -30px;
+    position: absolute;
+
+    z-index:10;
+}
 .buttwo
 {
    cursor: pointer;
@@ -183,4 +212,14 @@ background-color: #444444;
     color: white;
     margin-top: 50px;
     padding-top: 7px;
+}
+.loading
+{
+   text-align:center;
+   color: wheat;
+   margin-left: 40%;
+   width: 200px;
+   margin-top: 150px;
+   font-weight: bolder;
+   font-size: 25px;
 }

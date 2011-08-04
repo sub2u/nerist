@@ -6,9 +6,14 @@ class FeedbacksController < ApplicationController
     @feedbacks = Feedback.all
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @feedbacks }
-    end
+     format.js do
+           render do |page|
+
+               page.replace_html "home",
+                 :partial => "index"
+           end
+        end
+  end
   end
 
   # GET /feedbacks/1

@@ -27,9 +27,14 @@ class CustomersController < ApplicationController
     @customer = Customer.new
 
     respond_to do |format|
-      format.html # new.html.erb
-      format.xml  { render :xml => @customer }
-    end
+     format.js do
+           render do |page|
+
+               page.replace_html "home",
+                 :partial => "form"
+           end
+        end
+  end
   end
 
   # GET /customers/1/edit
@@ -44,12 +49,23 @@ class CustomersController < ApplicationController
 
     respond_to do |format|
       if @customer.save
-        format.html { redirect_to(@customer, :notice => 'Customer was successfully created.') }
-        format.xml  { render :xml => @customer, :status => :created, :location => @customer }
+      format.js do
+           render do |page|
+
+               page.replace_html "home","<div class='loading'>User created successfully.</div>"
+                
+           end
+        end
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @customer.errors, :status => :unprocessable_entity }
-      end
+         format.js do
+           render do |page|
+
+               page.replace_html "home",
+                 :partial => "form"
+           end
+        end
+        
+       end
     end
   end
 
@@ -87,16 +103,16 @@ class CustomersController < ApplicationController
     if user
       session[:user] = user.id
       flash[:notice] ="Login Successfull"
-      redirect_to :controller=>'customers'
+      redirect_to :controller=>'home', :action=>"home"
     else
-      flash[:error] = "Login Unsuccssful"
-      redirect_to :controller=>'customers', :action=>"signin"
+      flash[:error] = "Login Fail"
+      redirect_to :controller=>'home', :action=>"home"
     end
   end
   def logout
     session[:user]=nil
     flash[:notice]='Logged out'
-    redirect_to :controller =>'home', :action=>'index'
+    redirect_to :controller =>'home', :action=>'home'
   end
   def signin
 

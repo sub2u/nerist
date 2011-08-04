@@ -46,10 +46,16 @@ $j(document).ready(function(){
   $j(".but").mouseover(function(){
   $j(".submenu").slideUp();
   });
-  $j("#barone").mouseover(function(){
+  $j("#except").mouseover(function(){
   $j(".submenu").slideUp();
   });
-
+  $j("a").click(function(){
+  $j("#home").html("<div class='loading'>Loading....</div>");
+  });
+$j("#logbut").mouseover(function(){
+  
+  $j("#login").slideDown(500);
+  });
 });
 
 </script>
@@ -59,12 +65,23 @@ $j(document).ready(function(){
     <div class="main">
       <div id="head"><img src="images/logo.bmp" width=100% /></div>
       <div id="menu">
-        <div id="barone"><table>
-            <tr><td>
-                <a href="/other"><div class="but">Login</div></a></td><td>
+        <div id="barone"><table border="0" width=100%>
+            <tr>
+              <td width=48% id="except"><%=flash[:notice]%><%=flash[:error]%></td>
+              <td>
+                <a href="/other"><div class="butexcept" id="logbut">Login</div></a></td><td>
                 <a href="/other"><div class="but">RTI</div></a></td><td>
                 <a href="/other"><div class="but">Discloser</div></a></td><td>
-                <a href="/other"><div class="but">webMail</div></a></td></tr>
+                <a href="/other"><div class="but">webMail</div></a></td>
+              <td width=15% id="except" align="center" valign="middle">
+                <%@ses ||=session[:user]
+                if @ses.nil?
+              %>
+              <%else%>
+                <%= link_to "Logout",{:controller=>'customers', :action=>'logout'},:class => 'ancer'%>
+
+                <%end%>
+              </td></tr>
           </table>
         </div>
         <div id="bartwo">
@@ -75,7 +92,13 @@ $j(document).ready(function(){
                 <div class="butone" id="Academics">Academic</div></td><td>
                 <div class="butone" id="department">Departments</div></td><td>
                 <div class="butone" id="Facilitie">Facilities</div></td><td>
-                <div class="butone" id="Student">Students</div></td></tr>
+                <div class="butone" id="Student">Students</div></td><td>
+           <% if @ses.nil?  %>
+              <%else%>
+          
+                <%= link_to "Feedbacks",{:controller=>'feedbacks', :action=>'index'}, :remote=>true,:class => 'butone'%>
+             </td></tr>
+                <%end%>
           </table>
         </div>
         <div id="departments" class="submenu">
@@ -128,6 +151,26 @@ $j(document).ready(function(){
           <a href="/other"><div class="buttwo">Student Facilties</div></a>
           <a href="/other"><div class="buttwo">Alumni</div></a>
         </div>
+        <div id="login" class="submenu">
+           <% form_tag :controller=>"customers", :action=>"login" do %>
+          <table>
+            <tr><td>
+           <label for="user_login">Login:</label>
+          </td><td>
+           <%= text_field "user", "login", :size=>20 %></td></tr>
+           <div class="signin_field"> <tr><td>
+           <label for="user_password">Password:</label></td><td>
+           <%= password_field "user", "password", :size=>20 %></td></tr>
+           </div>
+           <div id="signin_button"><tr><td></td><td>
+           <%= submit_tag "Login" %>or
+               <%= link_to "Register",{:controller=>'customers', :action=>'new'}, :remote=>true,:class => 'ancer'%>
+               </td></tr>
+           </div>
+           </table>
+           <%end%>
+        </div>
+
       </div>
       <div id="content">
         <%=yield%>
