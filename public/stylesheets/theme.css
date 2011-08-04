@@ -196,6 +196,8 @@ background-color: #444444;
     font-weight: bold;
  height: 30px;
  vertical-align:middle;
+ padding-top: 4px;
+ text-decoration: blink;
 }
 #subhome
 {
