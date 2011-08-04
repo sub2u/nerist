@@ -9,6 +9,18 @@
 }
 .ancer:hover
 {
+    text-decoration: none;
+    background-color: transparent;
+    color: #000000;
+}
+.ancerone
+{
+    text-decoration: none;
+    color: wheat;
+}
+.ancerone:hover
+{
+    text-decoration: none;
     background-color: transparent;
     color: #000000;
 }
