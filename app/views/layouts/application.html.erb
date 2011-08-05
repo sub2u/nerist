@@ -53,8 +53,10 @@ $j(document).ready(function(){
   $j("#home").html("<div class='loading'>Loading....</div>");
   });
 $j("#logbut").click(function(){
-  $j("#departments").slideUp();
-  $j("#login").slideDown(500);
+   $j("#login").slideToggle(500);
+  });
+  $j("#logbut").mouseover(function(){
+   $j("#Students,#Facilities").slideUp();
   });
 });
 
@@ -65,15 +67,15 @@ $j("#logbut").click(function(){
     <div class="main">
       <div id="head"><img src="images/logo.bmp" width=100% /></div>
       <div id="menu">
-        <div id="barone"><table border="0" width=100%>
+        <div id="barone"><table border="0" width=99%>
             <tr>
-              <td width=48% id="except" valign="middle">
+              <td width=68% id="except" valign="middle">
                 <%@ses ||=session[:user]
                 if @ses.nil?
               %>
               <%else%>
                 <% @fed ||=Customer.find(@ses)%>
-                <div style="font-weight: bold;font-size: 20px;color: navy;padding-left: 20px;margin-top: -6px;">Welcome <%=@fed.name%></div>
+                <div style="font-weight: bold;font-size: 17px;color: navy;padding-left: 20px;margin-top: -6px;">Welcome <%=@fed.name%></div>
                 <%end%>
               </td>
               <td>
@@ -81,10 +83,11 @@ $j("#logbut").click(function(){
                 <a href="/other"><div class="but">RTI</div></a></td><td>
                 <a href="/other"><div class="but">Discloser</div></a></td><td>
                 <a href="/other"><div class="but">webMail</div></a></td>
-              <td width=15% id="except" valign="middle">
+              <td id="except" valign="middle">
                 <%@ses ||=session[:user]
                 if @ses.nil?
               %>
+                <a href="/other"><div class="but">Contact Us</div></a>
               <%else%>
                 <div class="but"><%= link_to "Logout",{:controller=>'customers', :action=>'logout'},:class => 'ancer'%>
                 </div>
