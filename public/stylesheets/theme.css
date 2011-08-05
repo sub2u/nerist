@@ -232,14 +232,29 @@ background-color: #444444;
 }
 #foot
 {
-    background-color: #444444;
-    height: 30px;
+    height: 80px;
     width: 100%;
     text-align: center;
     vertical-align: middle;
-    color: white;
-    margin-top: 50px;
-    padding-top: 7px;
+    color: black;
+    margin-top: 3px;
+    padding-top: 2px;
+}
+#foot a
+{
+    margin-left: 3px;
+    margin-right: 3px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #666666;
+}
+#foot a:hover
+{
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  background-color: transparent;
+
 }
 .loading
 {
