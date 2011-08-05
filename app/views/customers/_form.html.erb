@@ -11,19 +11,23 @@
     </div>
   <% end %>
 <table style="margin-left: 30%;">
-  <tr><td>Full Name</td><td><%= f.text_field :name%></td></tr>
-  <tr><td>Use Id</td><td><%= f.text_field :user_id%></td></tr>
+  <tr><td>User Type</td><td>
+      <select id="user_user_type" name="customer[user_type]">
+  <option>Select</option>
+  <option>Alumni</option>
+  <option>Faculty</option>
+  <option>Employee</option>
+  <option>Student</option>
+</select>
+    </td></tr>
+  <tr>
+  <td>Full Name</td><td><%= f.text_field :name%></td></tr>
+  <tr><td>User Id</td><td><%= f.text_field :user_id%></td></tr>
   <tr><td>Email Address</td><td><%= f.text_field :email%></td></tr>
   <tr><td>Login Id</td><td> <%= f.text_field :login_id%></td></tr>
   <tr><td>password</td><td><%= f.password_field :password%></td></tr>
   <tr><td>Conform password</td><td><%= f.password_field :password_confirmation%></td></tr>
-  <tr><td>User Type</td><td>
-      <select id="user_user_type" name="customer[user_type]">
-  <option>Select</option>
-  <option>Student</option>
-  <option>Employee</option>
-</select>
-    </td></tr>
+  
   <tr><td></td><td><%= f.submit %></td></tr>
 </table>
   
