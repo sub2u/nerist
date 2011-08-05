@@ -58,6 +58,17 @@ $j("#logbut").click(function(){
   $j("#logbut").mouseover(function(){
    $j("#Students,#Facilities").slideUp();
   });
+
+  //happening script
+ $j("body").mouseover(function(){
+  $j(".hapnone").fadeOut(4000,function(){
+   $j(".hapntwo").fadeIn(300,function(){
+    $j(".hapntwo").fadeOut(4000,function(){
+      $j(".hapnone").fadeIn(300);
+    });
+   });
+  });
+ });
 });
 
 </script>

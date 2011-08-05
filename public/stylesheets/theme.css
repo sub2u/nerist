@@ -266,3 +266,14 @@ background-color: #444444;
    font-weight: bolder;
    font-size: 25px;
 }
+.hapnone
+{
+    width: 238px;
+position: absolute;
+}
+.hapntwo
+{
+    position: absolute;
+    display: none;
+    width: 238px;
+}
