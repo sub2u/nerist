@@ -25,6 +25,17 @@ class HomeController < ApplicationController
         end
   end
   end
+  def happenlist
+    respond_to do |format|
+     format.js do
+           render do |page|
+
+               page.replace_html "home",
+                 :partial => "happenlist"
+           end
+        end
+  end
+  end
   def happening
     @id=params[:id]
       respond_to do |format|

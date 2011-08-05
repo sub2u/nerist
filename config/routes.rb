@@ -10,6 +10,7 @@ Nerist::Application.routes.draw do
   get "home/home"
   get "home/news"
   get "home/newslist"
+  get "home/happenlist"
    get "home/happening"
   get "home/csehome"
   get "home/csecourses"

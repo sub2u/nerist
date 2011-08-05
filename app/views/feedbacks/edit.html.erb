@@ -1,13 +1,7 @@
-
-<%@cus=Customer.find(session[:customer])
-
-    if @cus.mode_id==2
-%>
 <h1>Editing feedback</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @feedback %> |
 <%= link_to 'Back', feedbacks_path %>
-<%else%>
-<%end%>
+

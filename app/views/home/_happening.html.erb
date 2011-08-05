@@ -1,4 +1,10 @@
-
+<h1>Latest Happenings</h1><br/>
         <%@hapen ||=Happening.find(@id)%>
-
+        <h2><%=raw @hapen.title %></h2><br/>
+        <%if @hapen.url===""%>
+     <%else%>
+     <a href="<%=@hapen.url%>" target="_blank" class="ancer" style="text-decoration: blink;color: red;">
+       Download</a>
+     <%end%>
+        <br/>
         <%=raw @hapen.description %>

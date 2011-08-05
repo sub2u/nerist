@@ -1,0 +1,10 @@
+<%@hapn ||=Happening.find(:all,:order => "id DESC")%>
+       <%@hapn.each do |happen|%>
+        <%= link_to "#{happen.title}",{:controller=>'home', :action=>'happening',:id =>happen.id}, :remote=>true,:class => 'ancer'%>
+<%if happen.url===""%>
+     <%else%>
+     <a href="<%=happen.url%>" target="_blank" class="ancer" style="text-decoration: blink;color: red;">
+       Download</a>
+     <%end%>
+        <hr/>
+         <%end%>

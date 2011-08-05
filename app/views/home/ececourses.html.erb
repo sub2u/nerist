@@ -20,34 +20,41 @@
     <div id="righttop">
         <div style="background-color: #444444;color: white;font-weight: bold;">Latest News</div>
         <div style="height: 160px;">
-         <marquee DIRECTION=up scrollamount=3 height=100% onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 4, 0);">
-          <%@news ||=Newse.find(:all,:order => "id DESC",:conditions => ["branch = ?","ece"], :limit => 5)%>
-        <%@news.each do |news|%>
+         <marquee DIRECTION=up scrollamount=2 height=100% onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 2, 0);">
+        <%@news ||=Newse.find(:all,:order => "id DESC", :limit => 5)%>
+       <%@news.each do |news|%>
         <%= link_to "#{news.title}",{:controller=>'home', :action=>'news',:id =>news.id}, :remote=>true,:class => 'ancer'%>
  <hr/>
         <%end%>
          </marquee>
       </div>
 
-        <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: white;text-align: center;font-weight: bold;width: auto;">
+        <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: purple;text-align: center;font-weight: bold;width: auto;">
           <%= link_to "More",{:controller=>'home', :action=>'newslist'}, :remote=>true,:class => 'ancerone'%>
           </div>
 
       </div>
     <div id="rightmiddle">
+
       <div style="background-color: #444444;color: white;font-weight: bold;">Recent Happenings</div>
    <div style="height: 160px;">
-
-        <%@happen ||=Happening.find(:all,:conditions => ["branch = ?","ece"])%>
+     <marquee DIRECTION=up scrollamount=2 height=100% onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 2, 0);">
+      <%@happen ||=Happening.find(:all,:order => "id DESC", :limit => 5)%>
        <%@happen.each do |happen|%>
 
 <%= link_to "#{happen.title}",{:controller=>'home', :action=>'happening',:id =>happen.id}, :remote=>true,:class => 'ancer'%>
+<%if happen.url===""%>
+     <%else%>
      <a href="<%=happen.url%>" target="_blank" class="ancer" style="text-decoration: blink;color: red;">
        Download</a>
+     <%end%>
         <hr/>
         <%end%>
-
+       </marquee>
       </div>
+       <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: purple;text-align: center;font-weight: bold;width: auto;">
+          <%= link_to "More",{:controller=>'home', :action=>'happenlist'}, :remote=>true,:class => 'ancerone'%>
+          </div>
     </div>
  <div id="rightbottom">
       <div style="background-color: #444444;color: white;font-weight: bold;">Feedback</div>
