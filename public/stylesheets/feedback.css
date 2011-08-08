@@ -48,9 +48,11 @@
 	    -webkit-border-radius:5px;
 	    -moz-border-radius:5px;
             cursor: pointer;
+            font-weight: bold;
 
 }
-submit:hover
+.submit:hover
 {
 	background: #666666;
+        font-weight: bolder;
 }
