@@ -41,7 +41,7 @@
 
  .submit
         {
-            background: url('/images/send.gif');
+            background: orange;
             height: 40px;
             width: 125px;
             border-radius:5px 5px 5px 5px;
@@ -52,5 +52,5 @@
 }
 submit:hover
 {
-	border: 1px solid blue;
+	background: #666666;
 }
