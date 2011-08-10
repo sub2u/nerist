@@ -144,7 +144,14 @@ $j("#logbut").click(function(){
         <div id="bartwo">
           <table>
             <tr><td>
-                <a href="/"><div class="butone" id="homebar">Home</div></a></td><td>
+                <%@ses ||=session[:user]
+                if @ses.nil?
+              %>
+                <a href="/"><div class="butone" id="homebar">Home</div></a>
+              <%else%>
+                <a href="/home"><div class="butone" id="homebar">Home</div></a>
+                <%end%>
+                </td><td>
                 <div class="butone" id="Institutes">Institute</div></td><td>
                 <div class="butone" id="Academics">Academic</div></td><td>
                 <div class="butone" id="department">Departments</div></td><td>
