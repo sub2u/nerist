@@ -1,0 +1,55 @@
+<h1>Listing aluminiprofiles</h1>
+
+<table>
+  <tr>
+    <th>Regid</th>
+    <th>Sex</th>
+    <th>Dob</th>
+    <th>Yearofjoining</th>
+    <th>Course</th>
+    <th>Mobile</th>
+    <th>Phone</th>
+    <th>Working</th>
+    <th>Workpo</th>
+    <th>Workaddress</th>
+    <th>Workph</th>
+    <th>Maristat</th>
+    <th>Curadress</th>
+    <th>Pradress</th>
+    <th>Hobies</th>
+    <th>Sports</th>
+    <th>Goals</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @aluminiprofiles.each do |aluminiprofile| %>
+  <tr>
+    <td><%= aluminiprofile.regid %></td>
+    <td><%= aluminiprofile.sex %></td>
+    <td><%= aluminiprofile.dob %></td>
+    <td><%= aluminiprofile.yearofjoining %></td>
+    <td><%= aluminiprofile.course %></td>
+    <td><%= aluminiprofile.mobile %></td>
+    <td><%= aluminiprofile.phone %></td>
+    <td><%= aluminiprofile.working %></td>
+    <td><%= aluminiprofile.workpo %></td>
+    <td><%= aluminiprofile.workaddress %></td>
+    <td><%= aluminiprofile.workph %></td>
+    <td><%= aluminiprofile.maristat %></td>
+    <td><%= aluminiprofile.curadress %></td>
+    <td><%= aluminiprofile.pradress %></td>
+    <td><%= aluminiprofile.hobies %></td>
+    <td><%= aluminiprofile.sports %></td>
+    <td><%= aluminiprofile.goals %></td>
+    <td><%= link_to 'Show', aluminiprofile %></td>
+    <td><%= link_to 'Edit', edit_aluminiprofile_path(aluminiprofile) %></td>
+    <td><%= link_to 'Destroy', aluminiprofile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Aluminiprofile', new_aluminiprofile_path %>

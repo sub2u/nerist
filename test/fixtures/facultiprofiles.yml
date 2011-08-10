@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  empid: MyString
+  sex: MyString
+  dob: 2011-08-10
+  deportment: MyString
+  mobile: MyString
+  phone: MyString
+  qulification: MyString
+  subjects: MyText
+  curadress: MyText
+  pradress: MyText
+  hobies: MyText
+  sports: MyText
+  goals: MyText
+
+two:
+  empid: MyString
+  sex: MyString
+  dob: 2011-08-10
+  deportment: MyString
+  mobile: MyString
+  phone: MyString
+  qulification: MyString
+  subjects: MyText
+  curadress: MyText
+  pradress: MyText
+  hobies: MyText
+  sports: MyText
+  goals: MyText

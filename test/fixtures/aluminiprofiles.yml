@@ -1,0 +1,39 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  regid: MyString
+  sex: MyString
+  dob: 2011-08-10
+  yearofjoining: MyString
+  course: MyString
+  mobile: MyString
+  phone: MyString
+  working: MyString
+  workpo: MyString
+  workaddress: MyText
+  workph: 1
+  maristat: MyString
+  curadress: MyText
+  pradress: MyText
+  hobies: MyText
+  sports: MyText
+  goals: MyText
+
+two:
+  regid: MyString
+  sex: MyString
+  dob: 2011-08-10
+  yearofjoining: MyString
+  course: MyString
+  mobile: MyString
+  phone: MyString
+  working: MyString
+  workpo: MyString
+  workaddress: MyText
+  workph: 1
+  maristat: MyString
+  curadress: MyText
+  pradress: MyText
+  hobies: MyText
+  sports: MyText
+  goals: MyText

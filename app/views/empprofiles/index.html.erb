@@ -1,0 +1,39 @@
+<h1>Listing empprofiles</h1>
+
+<table>
+  <tr>
+    <th>Empid</th>
+    <th>Sex</th>
+    <th>Dob</th>
+    <th>Mobile</th>
+    <th>Phone</th>
+    <th>Qulification</th>
+    <th>Curadress</th>
+    <th>Pradress</th>
+    <th>Hobies</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @empprofiles.each do |empprofile| %>
+  <tr>
+    <td><%= empprofile.empid %></td>
+    <td><%= empprofile.sex %></td>
+    <td><%= empprofile.dob %></td>
+    <td><%= empprofile.mobile %></td>
+    <td><%= empprofile.phone %></td>
+    <td><%= empprofile.qulification %></td>
+    <td><%= empprofile.curadress %></td>
+    <td><%= empprofile.pradress %></td>
+    <td><%= empprofile.hobies %></td>
+    <td><%= link_to 'Show', empprofile %></td>
+    <td><%= link_to 'Edit', edit_empprofile_path(empprofile) %></td>
+    <td><%= link_to 'Destroy', empprofile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Empprofile', new_empprofile_path %>

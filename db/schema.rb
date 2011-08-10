@@ -10,7 +10,29 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110809103032) do
+ActiveRecord::Schema.define(:version => 20110810060008) do
+
+  create_table "aluminiprofiles", :force => true do |t|
+    t.string   "regid"
+    t.string   "sex"
+    t.date     "dob"
+    t.string   "yearofjoining"
+    t.string   "course"
+    t.string   "mobile"
+    t.string   "phone"
+    t.string   "working"
+    t.string   "workpo"
+    t.text     "workaddress"
+    t.integer  "workph"
+    t.string   "maristat"
+    t.text     "curadress"
+    t.text     "pradress"
+    t.text     "hobies"
+    t.text     "sports"
+    t.text     "goals"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "customers", :force => true do |t|
     t.string    "name"
@@ -24,6 +46,20 @@ ActiveRecord::Schema.define(:version => 20110809103032) do
     t.timestamp "updated_at"
   end
 
+  create_table "empprofiles", :force => true do |t|
+    t.string   "empid"
+    t.string   "sex"
+    t.date     "dob"
+    t.string   "mobile"
+    t.string   "phone"
+    t.string   "qulification"
+    t.text     "curadress"
+    t.text     "pradress"
+    t.text     "hobies"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "events", :force => true do |t|
     t.string   "title"
     t.datetime "at"
@@ -34,6 +70,24 @@ ActiveRecord::Schema.define(:version => 20110809103032) do
     t.boolean  "faculty"
     t.boolean  "alumini"
     t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "facultiprofiles", :force => true do |t|
+    t.string   "empid"
+    t.string   "sex"
+    t.date     "dob"
+    t.string   "deportment"
+    t.string   "mobile"
+    t.string   "phone"
+    t.string   "qulification"
+    t.text     "subjects"
+    t.text     "curadress"
+    t.text     "pradress"
+    t.text     "hobies"
+    t.text     "sports"
+    t.text     "goals"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

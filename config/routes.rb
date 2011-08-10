@@ -1,4 +1,10 @@
 Nerist::Application.routes.draw do
+  resources :aluminiprofiles
+
+  resources :facultiprofiles
+
+  resources :empprofiles
+
   resources :events
 
   resources :stuprofiles

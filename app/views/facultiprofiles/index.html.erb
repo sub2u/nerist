@@ -1,0 +1,47 @@
+<h1>Listing facultiprofiles</h1>
+
+<table>
+  <tr>
+    <th>Empid</th>
+    <th>Sex</th>
+    <th>Dob</th>
+    <th>Deportment</th>
+    <th>Mobile</th>
+    <th>Phone</th>
+    <th>Qulification</th>
+    <th>Subjects</th>
+    <th>Curadress</th>
+    <th>Pradress</th>
+    <th>Hobies</th>
+    <th>Sports</th>
+    <th>Goals</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @facultiprofiles.each do |facultiprofile| %>
+  <tr>
+    <td><%= facultiprofile.empid %></td>
+    <td><%= facultiprofile.sex %></td>
+    <td><%= facultiprofile.dob %></td>
+    <td><%= facultiprofile.deportment %></td>
+    <td><%= facultiprofile.mobile %></td>
+    <td><%= facultiprofile.phone %></td>
+    <td><%= facultiprofile.qulification %></td>
+    <td><%= facultiprofile.subjects %></td>
+    <td><%= facultiprofile.curadress %></td>
+    <td><%= facultiprofile.pradress %></td>
+    <td><%= facultiprofile.hobies %></td>
+    <td><%= facultiprofile.sports %></td>
+    <td><%= facultiprofile.goals %></td>
+    <td><%= link_to 'Show', facultiprofile %></td>
+    <td><%= link_to 'Edit', edit_facultiprofile_path(facultiprofile) %></td>
+    <td><%= link_to 'Destroy', facultiprofile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Facultiprofile', new_facultiprofile_path %>

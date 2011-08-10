@@ -13,7 +13,7 @@
   <% end %>
       <div id="personal"></div>
 <table style="margin-left: 5%;" >
-  
+
   <tr>
   <td>Full Name</td><td><%= f.text_field :name%></td></tr>
   <tr><td>User Id</td><td><%= f.text_field :user_id%></td></tr>
@@ -29,14 +29,13 @@
 <% end %>
 
 </td><td>
-
-<%= form_for(@stuprofile,:remote => true) do |f| %>
-  <% if @stuprofile.errors.any? %>
+<%= form_for(@aluminiprofile,:remote => true) do |f| %>
+  <% if @aluminiprofile.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@stuprofile.errors.count, "error") %> prohibited this stuprofile from being saved:</h2>
+      <h2><%= pluralize(@aluminiprofile.errors.count, "error") %> prohibited this aluminiprofile from being saved:</h2>
 
       <ul>
-      <% @stuprofile.errors.full_messages.each do |msg| %>
+      <% @aluminiprofile.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
@@ -44,15 +43,27 @@
   <% end %>
 
   <div class="field">
-    Student Id :<br />
-    <%= f.text_field :userid %>
+    Registration id<br />
+    <%= f.text_field :regid %>
   </div>
   <div class="field">
-    Branch :<br />
-    <%= f.text_field :branch %>
+     Sex :<br />
+    <%= f.text_field :sex %>
   </div>
   <div class="field">
-    Mobile Number :<br />
+    Date of Birth :<br />
+    <%= f.date_select :dob %>
+  </div>
+  <div class="field">
+    Year Of Joining :<br />
+    <%= f.text_field :yearofjoining %>
+  </div>
+  <div class="field">
+    Course :<br />
+    <%= f.text_field :course %>
+  </div>
+  <div class="field">
+     Mobile Number :<br />
     <%= f.text_field :mobile %>
   </div>
   <div class="field">
@@ -60,12 +71,36 @@
     <%= f.text_field :phone %>
   </div>
   <div class="field">
+    Currently working In :<br />
+    <%= f.text_field :working %>
+  </div>
+  <div class="field">
+    Currently Occupation  :<br />
+    <%= f.text_field :workpo %>
+  </div>
+  <div class="field">
+    Office Address :<br />
+    <%= f.text_area :workaddress,:rows=>'3' %>
+  </div>
+  <div class="field">
+    Office Phone :<br />
+    <%= f.text_field :workph %>
+  </div>
+  <div class="field">
+    marriage Status :<br />
+    <%= f.text_field :maristat %>
+  </div>
+  <div class="field">
     Current Address :<br />
-    <%= f.text_area :curaddress,:rows=>'3' %>
+    <%= f.text_area :curadress,:rows=>'3' %>
   </div>
   <div class="field">
     Permanent Address :<br />
-    <%= f.text_area :peradress,:rows=>'3' %>
+    <%= f.text_area :pradress,:rows=>'3' %>
+  </div>
+  <div class="field">
+    Hobbies :<br />
+    <%= f.text_area :hobies,:rows=>'3' %>
   </div>
   <div class="field">
     Sports :<br />
@@ -73,11 +108,7 @@
   </div>
   <div class="field">
     Goals :<br />
-    <%= f.text_area :goals,:rows=>'3' %>
-  </div>
-  <div class="field">
-    Hobbies :<br />
-    <%= f.text_area :hobbyes,:rows=>'3' %>
+    <%= f.text_area :goals,:rows=>'3'%>
   </div>
   <div class="actions">
     <%= f.submit %>
