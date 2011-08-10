@@ -4,11 +4,12 @@ class Customer < ActiveRecord::Base
   attr_accessor :password, :password_confirmation
   validates :name, :presence=>true
   validates_uniqueness_of :user_id
+  validates_uniqueness_of :login_id
   validates :user_id, :presence=>true
   validates :email, :presence=>true
   validates_format_of :email, :with => /^(|(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6})$/i
   validates :login_id, :presence=>true
-  validates_length_of :email, :within => 5..20
+  validates_length_of :email, :within => 5..30
   validates_length_of :login_id, :within => 3..20
   validates :password, :presence=>true, :length => { :minimum => 5, :maximum => 40 }
   validates_confirmation_of :password
