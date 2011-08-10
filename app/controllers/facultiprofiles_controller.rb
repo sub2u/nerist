@@ -26,7 +26,7 @@ class FacultiprofilesController < ApplicationController
   def new
     @facultiprofile = Facultiprofile.find_by_empid (params[:userid])
     if @facultiprofile.nil?
-    @facultiprofile = SFacultiprofile.new
+    @facultiprofile = Facultiprofile.new
     @facultiprofile.empid=params[:userid]
     else
     end
