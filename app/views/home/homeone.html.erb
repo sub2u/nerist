@@ -1,0 +1,159 @@
+<table width=98% style="margin-left: 1%;">
+  <tr>
+
+    <td width=75% valign="top">
+      <div id="home">
+
+<% @fed ||=Customer.find(session[:user])
+   if @fed.user_type==="Admin"  %>
+ <table border="1" width=100%>
+     <tr style="background-color: #666666;color: white;font-weight: bold;"><td width=20%>Event Date</td><td>Event Title</td><td>Assigned By</td><td width=50%>Event Description</td></tr>
+     <%@events ||= Event.find(:all)
+
+     if @events.nil?
+              %>
+
+              <%else%>
+           <%  @events.each do |event|
+  %>
+       <tr><td><%=event.at%></td><td><%=event.title%></td><td><%=event.userid%></td><td ><%=event.description%></td></tr>
+ <%end%>
+                <%end%>
+
+       </table>
+ <%else%>
+<%if @fed.user_type==="Student"%>
+   <table border="1" width=100%>
+     <tr style="background-color: #666666;color: white;font-weight: bold;"><td width=20%>Event Date</td><td>Event Title</td><td>Assigned By</td><td width=50%>Event Description</td></tr>
+     <%@events ||= Event.find(:all,:order => "id DESC", :conditions => [ "student = ?", true])
+     
+     if @events.nil?
+              %>
+
+              <%else%>
+           <%  @events.each do |event|
+  %>
+       <tr><td><%=event.at%></td><td><%=event.title%></td><td><%=event.userid%></td><td ><%=event.description%></td></tr>
+ <%end%>
+                <%end%>
+ 
+       </table>
+         <%else%>
+<%if @fed.user_type==="Employee"%>
+        <table border="1" width=100%>
+     <tr style="background-color: #666666;color: white;font-weight: bold;"><td width=20%>Event Date</td><td>Event Title</td><td>Assigned By</td><td width=50%>Event Description</td></tr>
+     <%@events ||= Event.find(:all,:order => "id DESC", :conditions => [ "employee = ?", true])
+
+     if @events.nil?
+              %>
+
+              <%else%>
+           <%  @events.each do |event|
+  %>
+       <tr><td><%=event.at%></td><td><%=event.title%></td><td><%=event.userid%></td><td ><%=event.description%></td></tr>
+ <%end%>
+                <%end%>
+
+       </table>
+        <%else%>
+<%if @fed.user_type==="Faculty"%>
+        <table border="1" width=100%>
+     <tr style="background-color: #666666;color: white;font-weight: bold;"><td width=20%>Event Date</td><td>Event Title</td><td>Assigned By</td><td width=50%>Event Description</td></tr>
+     <%@events ||= Event.find(:all,:order => "id DESC", :conditions => [ "faculty = ?", true])
+
+     if @events.nil?
+              %>
+
+              <%else%>
+           <%  @events.each do |event|
+  %>
+       <tr><td><%=event.at%></td><td><%=event.title%></td><td><%=event.userid%></td><td ><%=event.description%></td></tr>
+ <%end%>
+                <%end%>
+
+       </table>
+        <%else%>
+<%if @fed.user_type==="Alumini"%>
+        <table border="1" width=100%>
+     <tr style="background-color: #666666;color: white;font-weight: bold;"><td width=20%>Event Date</td><td>Event Title</td><td>Assigned By</td><td width=50%>Event Description</td></tr>
+     <%@events ||= Event.find(:all,:order => "id DESC", :conditions => [ "alumini = ?", true])
+
+     if @events.nil?
+              %>
+
+              <%else%>
+           <%  @events.each do |event|
+  %>
+       <tr><td><%=event.at%></td><td><%=event.title%></td><td><%=event.userid%></td><td ><%=event.description%></td></tr>
+ <%end%>
+                <%end%>
+
+       </table>
+       <%else%>
+      <%end%>   <%end%>   <%end%>   <%end%>   <%end%>
+
+
+      </div>
+    </td>
+    <td width=25% valign="top">
+      <div id="righttop">
+        <div style="background-color: #444444;color: white;font-weight: bold;">Latest News</div>
+        <div style="height: 160px;">
+         <marquee DIRECTION=up scrollamount=2 height=100% onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 2, 0);">
+        <%@news ||=Newse.find(:all,:order => "id DESC", :limit => 5)%>
+       <%@news.each do |news|%>
+        <%= link_to "#{news.title}",{:controller=>'home', :action=>'news',:id =>news.id}, :remote=>true,:class => 'ancer'%>
+ <hr/>
+        <%end%>
+         </marquee>
+      </div>
+
+        <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: purple;text-align: center;font-weight: bold;width: auto;">
+          <%= link_to "More",{:controller=>'home', :action=>'newslist'}, :remote=>true,:class => 'ancerone'%>
+          </div>
+
+      </div>
+    <div id="rightmiddle">
+
+      <div style="background-color: #444444;color: white;font-weight: bold;">Recent Happenings</div>
+   <div style="height: 160px;">
+      <%@happen =Happening.find(:all,:order => "id DESC", :limit => 3)%>
+<div class="hapnone">
+<%@happen.each do |happen|%>
+
+<%= link_to "#{happen.title}",{:controller=>'home', :action=>'happening',:id =>happen.id}, :remote=>true,:class => 'ancer'%>
+<%if happen.url===""%>
+     <%else%>
+     <a href="<%=happen.url%>" target="_blank" class="ancer" style="text-decoration: blink;color: red;">
+       Download</a>
+     <%end%>
+        <hr/>
+
+     <%end%>
+          </div>
+     <%@happen =Happening.find(:all,:order => "id DESC", :limit => 3,:offset => 3)%>
+    <div class="hapntwo">
+<%@happen.each do |happen|%>
+
+<%= link_to "#{happen.title}",{:controller=>'home', :action=>'happening',:id =>happen.id}, :remote=>true,:class => 'ancer'%>
+<%if happen.url===""%>
+     <%else%>
+     <a href="<%=happen.url%>" target="_blank" class="ancer" style="text-decoration: blink;color: red;">
+       Download</a>
+     <%end%>
+        <hr/>
+
+       <%end%>
+         </div>
+      </div>
+       <div style="-moz-border-radius: 5px;-webkit-border-radius: 5px;border-radius: 5px 5px 5px 5px;margin-left: 180px;background-color: #666666;color: purple;text-align: center;font-weight: bold;width: auto;">
+          <%= link_to "More",{:controller=>'home', :action=>'happenlist'}, :remote=>true,:class => 'ancerone'%>
+          </div>
+    </div>
+    <div id="rightbottom">
+      <div style="background-color: #444444;color: white;font-weight: bold;">Feedback</div>
+    <iframe style='background-color: transparent;border: 0px;' width=100% height="270" frameBorder="0" src="http://nerist.heroku.com/feedbacks/new" scrolling="no"  allowtransparency="true";></iframe>
+    </div>
+    </td>
+  </tr>
+</table>

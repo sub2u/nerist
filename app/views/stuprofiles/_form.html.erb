@@ -1,0 +1,86 @@
+<table><tr><td valign="top"align="left">
+<%= form_for(@customer,:remote => true) do |f| %>
+  <% if @customer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% @customer.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+      <div id="personal"></div>
+<table style="margin-left: 5%;" >
+  
+  <tr>
+  <td>Full Name</td><td><%= f.text_field :name%></td></tr>
+  <tr><td>User Id</td><td><%= f.text_field :user_id%></td></tr>
+  <tr><td>Email Address</td><td><%= f.text_field :email%></td></tr>
+  <tr><td>Login Id</td><td> <%= f.text_field :login_id%></td></tr>
+  <tr><td>password</td><td><%= f.password_field :password%></td></tr>
+  <tr><td>Confirm password</td><td><%= f.password_field :password_confirmation%></td></tr>
+
+  <tr><td></td><td><%= f.submit %></td></tr>
+</table>
+
+
+<% end %>
+
+</td><td>
+
+<%= form_for(@stuprofile,:remote => true) do |f| %>
+  <% if @stuprofile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@stuprofile.errors.count, "error") %> prohibited this stuprofile from being saved:</h2>
+
+      <ul>
+      <% @stuprofile.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :userid %><br />
+    <%= f.text_field :userid %>
+  </div>
+  <div class="field">
+    <%= f.label :branch %><br />
+    <%= f.text_field :branch %>
+  </div>
+  <div class="field">
+    <%= f.label :mobile %><br />
+    <%= f.text_field :mobile %>
+  </div>
+  <div class="field">
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :curaddress %><br />
+    <%= f.text_area :curaddress,:rows=>'3' %>
+  </div>
+  <div class="field">
+    <%= f.label :peradress %><br />
+    <%= f.text_area :peradress,:rows=>'3' %>
+  </div>
+  <div class="field">
+    <%= f.label :sports %><br />
+    <%= f.text_area :sports,:rows=>'3' %>
+  </div>
+  <div class="field">
+    <%= f.label :goals %><br />
+    <%= f.text_area :goals,:rows=>'3' %>
+  </div>
+  <div class="field">
+    <%= f.label :hobbyes %><br />
+    <%= f.text_area :hobbyes,:rows=>'3' %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+</td></tr></table>

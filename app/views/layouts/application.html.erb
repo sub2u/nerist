@@ -93,7 +93,21 @@ $j("#logbut").click(function(){
                 <%end%>
               </td>
               <td>
-                <div class="butexcept" id="logbut">Login</div></td><td>
+                <%@ses ||=session[:user]
+                if @ses.nil?
+              %>
+                <div class="butexcept" id="logbut">Login</div>
+              <%else%>
+<% @fed ||=Customer.find(@ses)
+           if @fed.user_type==="Student"  %>
+                <div class="butexcept"><%= link_to "Profile",{:controller=>'stuprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
+            
+<%else%>
+                <div class="butexcept" id="logbut">Login</div>
+      <%end%>
+
+                <%end%>
+                </td><td>
                 <a href="/other"><div class="but">RTI</div></a></td><td>
                 <a href="/other"><div class="but">Discloser</div></a></td><td>
                 <a href="/other"><div class="but">webMail</div></a></td>
@@ -122,10 +136,14 @@ $j("#logbut").click(function(){
                 if @ses.nil?
               %>
               <%else%>
+
+ <%= link_to "New Event",{:controller=>'events', :action=>'new'}, :remote=>true,:class => 'butone'%>
+              </td><td>
 <% @fed ||=Customer.find(@ses)
            if @fed.user_type==="Admin"  %>
  <%= link_to "Feedbacks",{:controller=>'feedbacks', :action=>'index'}, :remote=>true,:class => 'butone'%>
-             </td></tr>
+             </td>
+            </tr>
 <%else%>
       <%end%>
                
@@ -183,6 +201,7 @@ $j("#logbut").click(function(){
           <a href="/other"><div class="buttwo">Alumni</div></a>
         </div>
         <div id="login" class="submenu">
+          <div style="margin: 10px;background-color: white; opacity: 1.0;">
            <% form_tag :controller=>"customers", :action=>"login" do %>
           <table>
             <tr><td>
@@ -200,6 +219,7 @@ $j("#logbut").click(function(){
            </div>
            </table>
            <%end%>
+          </div>
         </div>
 
       </div>

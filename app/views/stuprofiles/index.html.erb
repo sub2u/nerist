@@ -1,0 +1,39 @@
+<h1>Listing stuprofiles</h1>
+
+<table>
+  <tr>
+    <th>Userid</th>
+    <th>Branch</th>
+    <th>Mobile</th>
+    <th>Phone</th>
+    <th>Curaddress</th>
+    <th>Peradress</th>
+    <th>Sports</th>
+    <th>Goals</th>
+    <th>Hobbyes</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stuprofiles.each do |stuprofile| %>
+  <tr>
+    <td><%= stuprofile.userid %></td>
+    <td><%= stuprofile.branch %></td>
+    <td><%= stuprofile.mobile %></td>
+    <td><%= stuprofile.phone %></td>
+    <td><%= stuprofile.curaddress %></td>
+    <td><%= stuprofile.peradress %></td>
+    <td><%= stuprofile.sports %></td>
+    <td><%= stuprofile.goals %></td>
+    <td><%= stuprofile.hobbyes %></td>
+    <td><%= link_to 'Show', stuprofile %></td>
+    <td><%= link_to 'Edit', edit_stuprofile_path(stuprofile) %></td>
+    <td><%= link_to 'Destroy', stuprofile, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Stuprofile', new_stuprofile_path %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  userid: MyString
+  branch: MyString
+  mobile: 
+  phone: 
+  curaddress: MyText
+  peradress: MyText
+  sports: MyText
+  goals: MyText
+  hobbyes: MyText
+
+two:
+  userid: MyString
+  branch: MyString
+  mobile: 
+  phone: 
+  curaddress: MyText
+  peradress: MyText
+  sports: MyText
+  goals: MyText
+  hobbyes: MyText

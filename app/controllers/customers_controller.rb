@@ -74,14 +74,25 @@ class CustomersController < ApplicationController
   def update
     @customer = Customer.find(params[:id])
 
-    respond_to do |format|
-      if @customer.update_attributes(params[:customer])
-        format.html { redirect_to(@customer, :notice => 'Customer was successfully updated.') }
-        format.xml  { head :ok }
+   respond_to do |format|
+      if @customer.save
+      format.js do
+           render do |page|
+
+               page.replace_html "personal","<div class='loading'>User Updated successfully.</div>"
+
+           end
+        end
       else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @customer.errors, :status => :unprocessable_entity }
-      end
+         format.js do
+           render do |page|
+
+               page.replace_html "personal","<div style=\"color:red;\">Please enter all values.</div>"
+                 
+           end
+        end
+
+       end
     end
   end
 
@@ -103,7 +114,7 @@ class CustomersController < ApplicationController
     if user
       session[:user] = user.id
       flash[:notice] ="Login Successfull"
-      redirect_to :controller=>'home', :action=>"home"
+      redirect_to "/home"
     else
       flash[:error] = "Login Fail"
       redirect_to :controller=>'home', :action=>"home"
