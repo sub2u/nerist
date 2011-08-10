@@ -81,7 +81,7 @@ class AluminiprofilesController < ApplicationController
     @aluminiprofile = Aluminiprofile.find(params[:id])
 
     respond_to do |format|
-      if @aluminiprofile.save
+      if @aluminiprofile.update_attributes(params[:aluminiprofile])
       format.js do
            render do |page|
 

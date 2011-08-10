@@ -81,7 +81,7 @@ class EmpprofilesController < ApplicationController
     @empprofile = Empprofile.find(params[:id])
 
     respond_to do |format|
-      if @empprofile.save
+      if @empprofile.update_attributes(params[:empprofile])
       format.js do
            render do |page|
 

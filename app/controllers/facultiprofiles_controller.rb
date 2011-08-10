@@ -79,7 +79,7 @@ class FacultiprofilesController < ApplicationController
     @facultiprofile = Facultiprofile.find(params[:id])
 
     respond_to do |format|
-      if @facultiprofile.save
+      if @facultiprofile.update_attributes(params[:facultiprofile])
       format.js do
            render do |page|
 
