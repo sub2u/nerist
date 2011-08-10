@@ -77,7 +77,7 @@ class StuprofilesController < ApplicationController
   # PUT /stuprofiles/1
   # PUT /stuprofiles/1.xml
   def update
-    @stuprofile = Stuprofile.find(params[:id])
+    @stuprofile = Stuprofile.find(params[:stuprofile])
 
    respond_to do |format|
       if @stuprofile.save
