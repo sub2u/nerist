@@ -112,7 +112,12 @@ $j("#logbut").click(function(){
                 <%if @fed.user_type==="Employee"  %>
                 <div class="butexcept" ><%= link_to "Profile",{:controller=>'empprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
                 <%else%>
+
+                <%if @fed.user_type==="Admin"  %>
+                 <div class="butexcept" ><%= link_to "Profile",{:controller=>'facultiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
+                <%else%>
                 <div class="butexcept" id="logbut">Login</div>
+                <%end%>
                 <%end%>
                 <%end%>
                 <%end%>
