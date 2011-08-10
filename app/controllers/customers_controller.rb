@@ -75,7 +75,7 @@ class CustomersController < ApplicationController
     @customer = Customer.find(params[:id])
 
    respond_to do |format|
-      if @customer.save
+      if @customer.update_attributes(params[:customer])
       format.js do
            render do |page|
 
