@@ -14,6 +14,16 @@
   <tr><td>User Type</td><td>
       <select id="user_user_type" name="customer[user_type]">
   <option>Select</option>
+  <%@ses ||=session[:user]
+                if @ses.nil?
+              %>
+              <%else%>
+                <% @fed ||=Customer.find(@ses)
+              if @fed.user_type==="Admin"
+              %>
+  <option>Admin</option>
+  <%else%><%end%>
+                <%end%>
   <option>Alumni</option>
   <option>Faculty</option>
   <option>Employee</option>
