@@ -96,6 +96,15 @@
       </div>
     </td>
     <td width=25% valign="top">
+      <div id="subhome">
+        <%= link_to "New Event",{:controller=>'events', :action=>'new'}, :remote=>true,:class => 'buttwo'%><br/>
+        <%= link_to "Edit Events",{:controller=>'events', :action=>'index'}, :remote=>true,:class => 'buttwo'%>
+        <a href="/home"><div class="buttwo">View Events</div></a>
+        <a href="/ecelaboratory"><div class="buttwo">Edit Basic Info</div></a>
+        <a href="/ecelaboratory"><div class="buttwo">Edit Profile Info</div></a>
+
+    </div>
+    <div id="dept">User Home (Show/Hide)</div>
       <div id="righttop">
         <div style="background-color: #444444;color: white;font-weight: bold;">Latest News</div>
         <div style="height: 160px;">

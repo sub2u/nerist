@@ -162,8 +162,7 @@ $j("#logbut").click(function(){
               %>
               <%else%>
 
- <%= link_to "New Event",{:controller=>'events', :action=>'new'}, :remote=>true,:class => 'butone'%>
-              </td><td valign="top">
+ 
 <% @fed ||=Customer.find(@ses)
            if @fed.user_type==="Admin"  %>
  <%= link_to "Feedbacks",{:controller=>'feedbacks', :action=>'index'}, :remote=>true,:class => 'butone'%>

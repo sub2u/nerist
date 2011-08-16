@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :title %><br />
+    Event Title :<br />
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :at %><br />
+    Event Date and Time<br />
     <%= f.datetime_select :at %>
   </div>
   <div style="visibility: hidden;position: absolute;">
@@ -27,27 +27,25 @@
     <%= f.text_field :userid,:value=>@fed.user_id %>
   </div>
 <div class="field">
-    <%= f.label :branch %><br />
+    Related Branch :<br />
     <%= f.text_field :branch %>
   </div>
-  <div class="field">
-    <%= f.label :employee %><br />
+  <br/>  <br/>
+    Belongs To :<br/>
     <%= f.check_box :employee %>
-  </div>
-  <div class="field">
-    <%= f.label :student %><br />
+  <%= f.label :employee %>
+    
     <%= f.check_box :student %>
-  </div>
-  <div class="field">
-    <%= f.label :faculty %><br />
+<%= f.label :student %>
+    
     <%= f.check_box :faculty %>
-  </div>
-  <div class="field">
-    <%= f.label :alumini %><br />
+  <%= f.label :faculty %>
+    
     <%= f.check_box :alumini %>
-  </div>
+<%= f.label :alumini %>
+  <br/>  <br/>  <br/>
   <div class="field">
-    <%= f.label :description %><br />
+    Description :<br />
     <%= f.text_area :description,:rows =>'5' %>
   </div>
   <div class="actions">

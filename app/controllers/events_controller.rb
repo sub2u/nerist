@@ -2,12 +2,24 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.xml
   def index
-    @events = Event.all
+    @ses ||=session[:user]
+     @fed ||=Customer.find(@ses)
+     if @fed.user_type==="Admin"
+       @events = Event.all()
+     else
+       @events = Event.find_all_by_userid (@fed.user_id)
+     end
+     
 
     respond_to do |format|
-      format.html # index.html.erb
-      format.xml  { render :xml => @events }
-    end
+     format.js do
+           render do |page|
+
+               page.replace_html "home",
+                 :partial => "index"
+           end
+        end
+  end
   end
 
   # GET /events/1
@@ -40,6 +52,15 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    respond_to do |format|
+     format.js do
+           render do |page|
+
+               page.replace_html "home",
+                 :partial => "edit"
+           end
+        end
+  end
   end
 
   # POST /events
@@ -92,7 +113,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to(events_url) }
+      format.html { redirect_to "/home"}
       format.xml  { head :ok }
     end
   end
