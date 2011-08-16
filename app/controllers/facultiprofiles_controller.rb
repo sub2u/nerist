@@ -111,4 +111,18 @@ class FacultiprofilesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  def userprof
+    @facultiprofile = Facultiprofile.find_by_empid (params[:userid])
+   
+    @customer = Customer.find(session[:user])
+  respond_to do |format|
+     format.js do
+           render do |page|
+
+               page.replace_html "home",:partial => "user"
+                
+           end
+        end
+  end 
+end
 end

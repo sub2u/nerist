@@ -73,7 +73,7 @@
 
        </table>
         <%else%>
-<%if @fed.user_type==="Alumini"%>
+<%if @fed.user_type==="Alumni"%>
         <table border="1" width=100%>
      <tr style="background-color: #666666;color: white;font-weight: bold;"><td width=20%>Event Date</td><td>Event Title</td><td>Assigned By</td><td width=50%>Event Description</td></tr>
      <%@events ||= Event.find(:all,:order => "id DESC", :conditions => [ "alumini = ?", true])
@@ -100,9 +100,33 @@
         <%= link_to "New Event",{:controller=>'events', :action=>'new'}, :remote=>true,:class => 'buttwo'%><br/>
         <%= link_to "Edit Events",{:controller=>'events', :action=>'index'}, :remote=>true,:class => 'buttwo'%>
         <a href="/home"><div class="buttwo">View Events</div></a>
-        <a href="/ecelaboratory"><div class="buttwo">Edit Basic Info</div></a>
-        <a href="/ecelaboratory"><div class="buttwo">Edit Profile Info</div></a>
+        <%= link_to "Edit Basic Info",{:controller=>'customers', :action=>'edit',:id =>@fed.id}, :remote=>true,:class => 'buttwo'%><br/>
+        <% @fed ||=Customer.find(@ses)
+           if @fed.user_type==="Student"  %>
+                <%= link_to "Edit Profile Info",{:controller=>'stuprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true,:class => 'buttwo'%>
+            
+<%else%>
+                <%if @fed.user_type==="Alumni"  %>
+                <%= link_to "Edit Profile Info",{:controller=>'aluminiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true,:class => 'buttwo'%>
+                <%else%>
+                <%if @fed.user_type==="Faculty"  %>
+                <%= link_to "Edit Profile Info",{:controller=>'facultiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true,:class => 'buttwo'%>
+                <%else%>
+                <%if @fed.user_type==="Employee"  %>
+                <%= link_to "Edit Profile Info",{:controller=>'empprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true,:class => 'buttwo'%>
+                <%else%>
 
+                <%if @fed.user_type==="Admin"  %>
+                 <%= link_to "Edit Profile Info",{:controller=>'facultiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true,:class => 'buttwo'%>
+                <%else%>
+                
+                <%end%>
+                <%end%>
+                <%end%>
+                <%end%>
+                
+      <%end%>
+        
     </div>
     <div id="dept">User Home (Show/Hide)</div>
       <div id="righttop">

@@ -100,21 +100,21 @@ $j("#logbut").click(function(){
               <%else%>
 <% @fed ||=Customer.find(@ses)
            if @fed.user_type==="Student"  %>
-                <div class="butexcept" ><%= link_to "Profile",{:controller=>'stuprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
+                <div class="butexcept" ><%= link_to "Profile",{:controller=>'stuprofiles', :action=>'userprof',:userid =>@fed.user_id}, :remote=>true, :method => :post%></div>
             
 <%else%>
                 <%if @fed.user_type==="Alumni"  %>
-                <div class="butexcept" ><%= link_to "Profile",{:controller=>'aluminiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
+                <div class="butexcept" ><%= link_to "Profile",{:controller=>'aluminiprofiles', :action=>'userprof',:userid =>@fed.user_id}, :remote=>true, :method => :post%></div>
                 <%else%>
                 <%if @fed.user_type==="Faculty"  %>
-                <div class="butexcept" ><%= link_to "Profile",{:controller=>'facultiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
+                <div class="butexcept" ><%= link_to "Profile",{:controller=>'facultiprofiles', :action=>'userprof',:userid =>@fed.user_id}, :remote=>true, :method => :post%></div>
                 <%else%>
                 <%if @fed.user_type==="Employee"  %>
-                <div class="butexcept" ><%= link_to "Profile",{:controller=>'empprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
+                <div class="butexcept" ><%= link_to "Profile",{:controller=>'empprofiles', :action=>'userprof',:userid =>@fed.user_id}, :remote=>true, :method => :post%></div>
                 <%else%>
 
                 <%if @fed.user_type==="Admin"  %>
-                 <div class="butexcept" ><%= link_to "Profile",{:controller=>'facultiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></div>
+                 <div class="butexcept" ><%= link_to "Profile",{:controller=>'facultiprofiles', :action=>'userprof',:userid =>@fed.user_id}, :remote=>true, :method => :post%></div>
                 <%else%>
                 <div class="butexcept" id="logbut">Login</div>
                 <%end%>

@@ -40,6 +40,15 @@ class CustomersController < ApplicationController
   # GET /customers/1/edit
   def edit
     @customer = Customer.find(params[:id])
+     respond_to do |format|
+     format.js do
+           render do |page|
+
+               page.replace_html "home",
+                 :partial => "form"
+           end
+        end
+  end
   end
 
   # POST /customers

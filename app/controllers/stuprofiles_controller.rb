@@ -112,5 +112,19 @@ class StuprofilesController < ApplicationController
       format.xml  { head :ok }
     end
   end
+def userprof
+   @stuprofile = Stuprofile.find_by_userid(params[:userid])
+   
+    @customer = Customer.find(session[:user])
+  respond_to do |format|
+     format.js do
+           render do |page|
 
+               page.replace_html "home",:partial => "user"
+                
+           end
+        end
+  end 
 end
+end
+

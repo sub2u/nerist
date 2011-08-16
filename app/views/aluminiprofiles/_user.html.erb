@@ -1,0 +1,38 @@
+
+<%@ses ||=session[:user] 
+@fed ||=Customer.find(@ses)%>
+<br/><br/>
+<table width=100%>
+  <tr style="background-color: #444444;color: white;font-size: 25px;font-weight: bold;"><td>User Basic Information</td><td align="center"><%= link_to "Edit",{:controller=>'customers', :action=>'edit',:id =>@fed.id}, :remote=>true%></td></tr>
+  <tr><td>User Type :</td><td width=50%><%=@customer.user_type%></td></tr>
+  <tr><td>Full Name :</td><td><%=@customer.name%></td></tr>
+  <tr><td>User Id :</td><td><%= @customer.user_id %></td></tr>
+  <tr><td>Email Address :</td><td><%= @customer.email %></td></tr>
+  <tr><td>Login Id :</td><td><%= @customer.login_id %></td></tr>
+  <tr><td>Pass Word :</td><td>*******</td></tr>
+</table>
+ <%if @aluminiprofile.nil?
+    
+    else%>
+<br/><br/>
+<table width=100%>
+  <tr style="background-color: #444444;color: white;font-size: 25px;font-weight: bold;"><td>User Profile Information</td><td align="center"><%= link_to "Edit",{:controller=>'aluminiprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></td></tr>
+  <tr><td>Sex:</td><td width=50%><%= @aluminiprofile.sex %></td></tr>
+  <tr><td>Date of Birth :</td><td><%= @aluminiprofile.dob %></td></tr>
+  <tr><td>Year of Joining :</td><td><%= @aluminiprofile.yearofjoining %></td></tr>
+  <tr><td>Course :</td><td> <%= @aluminiprofile.course %></td></tr>
+  <tr><td>Mobile Number :</td><td><%= @aluminiprofile.mobile %></td></tr>
+  <tr><td>Phone Number :</td><td><%= @aluminiprofile.phone %></td></tr>
+  <tr><td>Current Working:</td><td><%= @aluminiprofile.working %></td></tr>
+  <tr><td>Position:</td><td><%= @aluminiprofile.workpo %></td></tr>
+  <tr><td>Office Address:</td><td width=50%><%= @aluminiprofile.workaddress %></td></tr>
+  <tr><td>Office Phone :</td><td><%= @aluminiprofile.workph %></td></tr>
+  <tr><td>Maried Status :</td><td><%= @aluminiprofile.maristat %></td></tr>
+  <tr><td>Current Address :</td><td><%= @aluminiprofile.curadress %></td></tr>
+  <tr><td>Permanent Address :</td><td><%= @aluminiprofile.pradress %></td></tr>
+  <tr><td>hobbies :</td><td><%= @aluminiprofile.hobies %></td></tr>
+  <tr><td>Sports :</td><td><%= @aluminiprofile.sports %></td></tr>
+  <tr><td>Goals :</td><td><%= @aluminiprofile.goals %></td></tr>
+</table>
+<%    end
+    %>

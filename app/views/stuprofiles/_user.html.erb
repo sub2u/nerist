@@ -1,0 +1,30 @@
+
+<%@ses ||=session[:user] 
+@fed ||=Customer.find(@ses)%>
+<br/><br/>
+<table width=100%>
+  <tr style="background-color: #444444;color: white;font-size: 25px;font-weight: bold;"><td>User Basic Information</td><td align="center"><%= link_to "Edit",{:controller=>'customers', :action=>'edit',:id =>@fed.id}, :remote=>true%></td></tr>
+  <tr><td>User Type :</td><td width=50%><%=@customer.user_type%></td></tr>
+  <tr><td>Full Name :</td><td><%=@customer.name%></td></tr>
+  <tr><td>User Id :</td><td><%= @customer.user_id %></td></tr>
+  <tr><td>Email Address :</td><td><%= @customer.email %></td></tr>
+  <tr><td>Login Id :</td><td><%= @customer.login_id %></td></tr>
+  <tr><td>Pass Word :</td><td>*******</td></tr>
+</table>
+ <%if @stuprofile.nil?
+    
+    else%>
+<br/><br/>
+<table width=100%>
+  <tr style="background-color: #444444;color: white;font-size: 25px;font-weight: bold;"><td>User Profile Information</td><td align="center"><%= link_to "Edit",{:controller=>'stuprofiles', :action=>'new',:userid =>@fed.user_id}, :remote=>true%></td></tr>
+  <tr><td>Branch :</td><td width=50%><%= @stuprofile.branch %></td></tr>
+  <tr><td>Mobile Number :</td><td><%= @stuprofile.mobile %></td></tr>
+  <tr><td>Phone Number :</td><td><%= @stuprofile.phone %></td></tr>
+  <tr><td>Current Address :</td><td><%= @stuprofile.curaddress %></td></tr>
+  <tr><td>Permanent Address :</td><td><%= @stuprofile.peradress %></td></tr>
+  <tr><td>Sports :</td><td><%= @stuprofile.sports %></td></tr>
+  <tr><td>Goals :</td><td><%= @stuprofile.goals %></td></tr>
+  <tr><td>hobbies :</td><td><%= @stuprofile.hobbyes %></td></tr>
+</table>
+<%    end
+    %>

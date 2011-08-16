@@ -10,7 +10,10 @@ Nerist::Application.routes.draw do
   resources :events
 
   resources :stuprofiles
-
+post 'stuprofiles/userprof'
+post 'facultiprofiles/userprof'
+post 'empprofiles/userprof'
+post 'aluminiprofiles/userprof'
  get 'customers/signin'
   match 'signin' => 'customers#signin'
   get 'home/homeone'
